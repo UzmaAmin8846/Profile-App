@@ -1,0 +1,25 @@
+{
+  "_comment": "Example only. Rename to cv.json, fill in your data, and call loadCvData() from src/data/cvData.ts inside a useEffect in App.tsx to load this instead of the hard-coded TypeScript object.",
+  "profile": {
+    "name": "Uzma Amin",
+    "title": "Frontend Developer | UI/UX Designer | Computer Science Graduate",
+    "summary": "Front-end developer and UI/UX designer...",
+    "photoUrl": "https://example.com/path-to-photo.jpg",
+    "location": "Mardan, Pakistan"
+  },
+  "contact": {
+    "email": "meenakhan8846@gmail.com",
+    "phone": "+92 311-9471040",
+    "location": "Mardan, Pakistan",
+    "cvFileUrl": "",
+    "links": [
+      { "label": "LinkedIn", "url": "https://linkedin.com/in/uzma-amin-ba348331b", "icon": "linkedin" },
+      { "label": "Behance", "url": "https://behance.net/meenakhan10", "icon": "behance" }
+    ]
+  },
+  "experience": [],
+  "education": [],
+  "projects": [],
+  "skillGroups": [],
+  "certificates": []
+}

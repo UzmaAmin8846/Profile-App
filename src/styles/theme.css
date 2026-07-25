@@ -1,0 +1,213 @@
+/* ============================================================
+   Design tokens
+   Palette: warm off-white surface, indigo ink, violet + coral +
+   teal accents — chosen to echo the "developer + designer" dual
+   identity (violet = Figma/design, teal = code/systems, coral = CTA energy).
+   Type: Space Grotesk (display) / Inter (body) / JetBrains Mono (labels & tags)
+   ============================================================ */
+:root {
+  --bg: #faf9f7;
+  --surface: #ffffff;
+  --surface-raised: #ffffff;
+  --border: #e6e3dd;
+  --ink: #1c1b29;
+  --ink-soft: #4a4860;
+  --ink-faint: #8b899e;
+
+  --accent-violet: #6c5ce7;
+  --accent-violet-ink: #4b3fc7;
+  --accent-coral: #ff6b6b;
+  --accent-teal: #1fa398;
+
+  --focus-ring: #6c5ce7;
+
+  --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --shadow-card: 0 1px 2px rgba(28, 27, 41, 0.04), 0 8px 24px rgba(28, 27, 41, 0.06);
+  --shadow-raised: 0 4px 12px rgba(28, 27, 41, 0.08), 0 16px 40px rgba(28, 27, 41, 0.1);
+
+  --header-height: 68px;
+  --max-width: 1120px;
+
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  --bg: #13121b;
+  --surface: #1c1b29;
+  --surface-raised: #211f30;
+  --border: #33314a;
+  --ink: #f4f3fb;
+  --ink-soft: #c9c7dc;
+  --ink-faint: #8a87a3;
+
+  --accent-violet: #a29bfe;
+  --accent-violet-ink: #a29bfe;
+  --accent-coral: #ff8787;
+  --accent-teal: #4fd8ca;
+
+  --focus-ring: #a29bfe;
+
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-raised: 0 4px 12px rgba(0, 0, 0, 0.3), 0 16px 40px rgba(0, 0, 0, 0.45);
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 12px);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Visible, consistent keyboard focus ring everywhere */
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Skip link for keyboard/screen-reader users */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--accent-violet);
+  color: #fff;
+  padding: 12px 20px;
+  z-index: 1000;
+  border-radius: 0 0 var(--radius-sm) 0;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-violet);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.section-intro {
+  color: var(--ink-soft);
+  max-width: 620px;
+  margin-bottom: 48px;
+  font-size: 1.05rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Breakpoints ----------
+   Mobile:  < 640px  (default styles)
+   Tablet:  640px – 1023px
+   Desktop: >= 1024px
+---------------------------------- */
+@media (max-width: 1023px) {
+  .section {
+    padding: 72px 0;
+  }
+}
+
+@media (max-width: 639px) {
+  .section {
+    padding: 56px 0;
+  }
+  .container {
+    padding: 0 18px;
+  }
+}

@@ -1,0 +1,167 @@
+.hero {
+  padding: 88px 0 96px;
+  border-bottom: 1px solid var(--border);
+}
+
+.heroInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 56px;
+}
+
+.heroText {
+  max-width: 600px;
+}
+
+.name {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-family: var(--font-mono);
+  color: var(--accent-violet-ink);
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.summary {
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  margin-bottom: 32px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.primaryCta {
+  background: var(--accent-violet);
+  color: #fff;
+  text-decoration: none;
+  padding: 13px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: var(--shadow-card);
+}
+
+.primaryCta:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-raised);
+}
+
+.locationLine {
+  color: var(--ink-faint);
+  font-size: 0.9rem;
+}
+
+.heroPhoto {
+  flex-shrink: 0;
+}
+
+/* About / timeline */
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.blockHeading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--ink);
+}
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.timelineItem {
+  padding-left: 18px;
+  border-left: 2px solid var(--border);
+  position: relative;
+}
+
+.timelineItem::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-teal);
+}
+
+.timelineHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 2px;
+}
+
+.timelineRole {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.timelineDates {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+
+.timelineCompany {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  margin-bottom: 8px;
+}
+
+.timelineDetail {
+  color: var(--ink-faint);
+  font-size: 0.88rem;
+}
+
+.timelineHighlights {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+@media (max-width: 1023px) {
+  .heroInner {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 36px;
+  }
+  .heroText {
+    max-width: 100%;
+  }
+  .actions {
+    justify-content: center;
+  }
+  .aboutGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
