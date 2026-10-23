@@ -12,8 +12,16 @@ interface ProfilePhotoProps {
  * obviously malformed input (empty strings, stray text, javascript: URIs). */
 function isValidImageUrl(url?: string): boolean {
   if (!url) return false;
+
+  const trimmed = url.trim();
+  if (!trimmed) return false;
+
+  if (trimmed.startsWith('/') || trimmed.startsWith('./') || trimmed.startsWith('../')) {
+    return true;
+  }
+
   try {
-    const parsed = new URL(url);
+    const parsed = new URL(trimmed);
     return parsed.protocol === 'http:' || parsed.protocol === 'https:';
   } catch {
     return false;

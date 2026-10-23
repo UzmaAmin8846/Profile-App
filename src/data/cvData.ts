@@ -14,8 +14,8 @@ export const cvData: CvData = {
     title: 'Frontend Developer | UI/UX Designer | Computer Science Graduate',
     summary:
       'Front-end developer and UI/UX designer with hands-on experience building responsive, user-friendly web interfaces in React.js, JavaScript, and Tailwind/Bootstrap. Skilled at translating design concepts into clean, functional code using Figma and modern front-end tools, with additional experience in WordPress design and video production. Detail-oriented and collaborative, with a strong drive to keep growing as a developer who balances usability with visual polish.',
-    // Replace with a real hosted image URL (e.g. from Behance/LinkedIn or your own CDN).
-    photoUrl: '',
+    // Save the profile image as public/profile.jpg and Vite will serve it at /profile.jpg.
+    photoUrl: '/profile.jpg',
     location: 'Mardan, Pakistan',
   },
   contact: {
